@@ -1,0 +1,47 @@
+.container {
+	margin: 0;
+}
+
+#header {
+	
+}
+
+#remaining {
+	line-height: 20px;
+}
+
+#question {
+
+}
+
+#choose {
+
+}
+
+#choose_a {
+
+}
+
+#choose_b {
+
+}
+
+#choose_c {
+
+}
+#choose_d {
+
+}
+
+#startbtn {
+	
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
