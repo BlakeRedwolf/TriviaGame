@@ -7,18 +7,29 @@
     	<title>week-4-game</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-D9XILkoivXN+bcvB2kSOowkIvIcBbNdoDQvfBNsxYAIieZbx8/SI4NeUvrRGCpDi" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body>
-	<div class="jumbotron" id="box-wrapper">
-	<div class="container-fluid">
 	<div class="container">
+	<div>
 		<div class="row">
+		<div class="col-sm-12 text-center">
+<div class="alert alert-success" role="alert">CORRECT!</div>
+<div class="alert alert-danger" role="alert" >WRONG!</div>
+<div id="FinalModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <h2>Final Score: <span id="FScore"></span></h2>
+    </div>
+  </div>
+</div>
+</div>
 			<div class="col-sm-12 text-center" id="header"><h4>The game ends when the time runs out.</h4></div>
 		</div>
 		<div class="row">
-			<div class="col-sm-12 text-center" id="remaining"><h2>Time Remaining:</h2></div>
+			<div class="col-sm-12 text-center" id="remaining"><h2>Time Remaining: </h2></div>
+			<h2 class="text-center" id="tremain">&nbsp;</h2>
 		</div>
+
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h2 class="btn btn-success btn-lg" id="startbtn" onclick="playGame()">Start</h2>
@@ -40,14 +51,14 @@
 	</div>
 	<div id="questiondiv">
 		<div class="row">
-			<div class="col-sm-12 text-center" id="question_b"><h3>Which one of these are a title of a Nirvana album?</h3></div>
+			<div class="col-sm-12 text-center" id="question_b"><h3>Which one of these is Not a Black Dahlia Murder album?</h3></div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12 text-center" id="choose">
-			<h2 class="btn btn-default btn-lg guessBtn" id="choose_a2">Master of Puppets</h2>
-			<h2 class="btn btn-default btn-lg guessBtn" id="choose_b2">Nevermind</h2>
-			<h2 class="btn btn-default btn-lg guessBtn" id="choose_c2">Brave new world</h2>
-			<h2 class="btn btn-default btn-lg guessBtn" id="choose_d2">St.Anger</h2>
+			<h2 class="btn btn-default btn-lg guessBtn" id="choose_a2">Nocturnal</h2>
+			<h2 class="btn btn-default btn-lg guessBtn" id="choose_b2">None So Vile</h2>
+			<h2 class="btn btn-default btn-lg guessBtn" id="choose_c2">Miasma</h2>
+			<h2 class="btn btn-default btn-lg guessBtn" id="choose_d2">Unhallowed</h2>
 			</div>
 		</div>
 		
@@ -93,7 +104,6 @@
 			</div>
 		</div>
 		
-	</div>
 	</div>
 	</div>
 	</div>

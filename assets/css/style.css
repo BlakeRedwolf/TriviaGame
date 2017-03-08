@@ -1,5 +1,5 @@
 .container {
-	margin: 0;
+	margin: 0 auto;
 }
 
 #header {
@@ -37,8 +37,24 @@
 	
 }
 
+.alert {
+    width: 50%;
+    margin: auto;
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+     z-index: 1000;
+    
+}
+
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { ... }
+@media (max-width: 500px) {
+.btn-lg, .btn-group-lg>.btn {
+	 width:100%; 
+
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) { ... }
