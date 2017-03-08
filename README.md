@@ -1,50 +1,81 @@
-# HW - {HW Name}
-(remove this before publishing) It is best to prefix your Homework Names so that you may easily filter them out later when you may have actual projects that you are working on. It also important to let employers know that this was only a hw assignment and not your personal work. (ex. hw_giph-tastic)
+# HW - {hw_TriviaGame}
 
 ## Live Link (If relevant)
- - www.example.com
 
-## Description on how to use the app
+ - https://blakeredwolf.github.io/TriviaGame/
+
+## Description
+
+- Click start button.
+- You will have 15 seconds to answer all the questions.
+- Your final score will appear at the end of the game.
 
 ## Requirements
-#### Add a simple description of what the HW requirements were
 
-- Add bullets
-- Like this
-
-1. Or you can use numbered lists
-2. Like this
-	- You can also add a tab and a "-" to add a sub-bullet like this
-3. Make sure the requirements are understandable
+- In this assignment, You'll create a Trivia game using JavaScript for the logic and jQuery to manipulate HTML. Be sure to layout this app with valid HTML and stylish CSS.
 
 ## Technologies Used
-#### Use bullets to list out the technologies used. For example,
-- Jquery for Dom Manipulation
-- AJAX for API GET requests
+
+- HTML
+- CSS
+- Bootstrap
+- Javascript
+- Jquery
 
 ## Code Explaination
-- Here, you can either provide a brief summary about your code and perhaps what you learned or you can go into specif detail about how you tackled certain tasks.
-- Use code snippets for placing example code and then describing it
-- Use subheaders to organize your thoughts
-- This is the most important part as it will show other what your code does with out having to download the code. 
-- In essense, this will also be a form of notes that you may later reference weeks later
+- Using Javascript, i created multiple functions playGame(), setInterval(setInterval), ckgame, and guess(userguess) i made a basic JS countdown timer, removed my start button on click, added a non breaking space to hold space where the button was located, then used an if statement to show a modal with the class of FinalModal to display the final user's score. Also added some cool animations via the .fadein and .fadeout methods.
+
+function playGame() {
+ 	$('#startbtn').html('&nbsp;');
+ 	$('#startbtn').removeClass('btn-success');
+
+ var tmr = setInterval(ckgame, 1000); 
+ 		$('#header h4').html('&nbsp;')
+ 		seconds = 15000;
+ 		function ckgame(){
+ 			seconds = seconds-1000;
+ 			s = seconds / 1000;
+ 			// console.log(seconds);
+ 			$("#tremain").text(s);
+ 			if(seconds <=0){
+ 			clearInterval(tmr);
+ 			//alert('Done');
+ 			var finalScore = $('#CorrectGuesses').val();
+ 			//alert(finalScore);
+			$('#FinalModal').css({'display':'block'}); 
+ 			$('#FScore').text(finalScore);
+ 			
+ 			return;
+ 			}
+ 		}
+
+ };
+
+ function guess(userguess) {
+	if (userguess == "choose_c1" || userguess == 'choose_b2' || userguess == 'choose_d3' || userguess == 'choose_b4' || userguess == 'choose_d5') {
+		//alert("Correct!");
+		$( ".alert-success" ).fadeIn( "fast", function() {
+			// Animation complete
+			$( ".alert-success" ).fadeOut( "slow", function() {
+			// Animation complete
+			});
+		});
+	var score = $('#CorrectGuesses').val();
+		if (!score){NewScore = 1}
+		else{	
+		NewScore = Number(score) +1;
+		$('#CorrectGuesses').val(Number(NewScore));
+	}
+	}
+	else{ 
+		//alert('Wrong Fucker!!!');
+			$( ".alert-danger" ).fadeIn( "fast", function() {
+			// Animation complete
+			$( ".alert-danger" ).fadeOut( "slow", function() {
+			// Animation complete
+			});
+		});
+	}	
+};
 
 -------------
-
-##Here is an example of what a Readme could look like:
-
-### AJAX Request to Giphy (Example)
-I created a function that allowed me to make an AJAX request to the Giphy API and then allowed me to pass through a callback function in order to further process the JSON object that was returned. 
-
-```
-var settings = {
-  "url": "http://api.giphy.com/v1/gifs/search?q=funny%20cat&api_key=dc6zaTOxFJmzC",
-  "method": "GET"
-  }
-}
-function getGiphyList(cb){
-	$.ajax(settings).done(function (response) {
-	  cb(response)
-	});
-}
-```
